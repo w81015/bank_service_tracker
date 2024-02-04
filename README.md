@@ -1,5 +1,5 @@
 
-# PTT銀行分析專案
+# 銀行服務主題分析
 
 該專案旨在從PTT銀行論壇提取、清理和分析數據。目標是利用LDA（隱含狄利克雷分配）分析揭示流行的主題和見解。該專案分為兩個主要部分：數據收集和數據分析。
 
@@ -23,5 +23,4 @@
 ## 需求
 
 - Python 3.6+
-- `requests`, `beautifulsoup4`, `ckiptagger`, `gensim`等常見的資料科學套件。
-
+- `pandas`, `jieba`,`requests`, `beautifulsoup4`, `ckiptagger`, `gensim`, `pyLDAvis`。
