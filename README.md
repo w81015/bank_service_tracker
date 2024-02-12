@@ -1,40 +1,41 @@
+[中文版 Chinese version](README_zh.md)
 
-# 銀行服務主題分析專案
+# Bank Service Topic Analysis Project
 
-本專案從PTT銀行論壇（Bank Service）提取、清理和分析數據。利用LDA（隱含狄利克雷分配）分析論壇中流行的主題，並進一步詮釋結果。專案分為三個部分：數據收集、數據分析和成果分析。
+This project extracts, cleans, and analyzes data from the PTT Bank Forum (Bank Service). It uses LDA (Latent Dirichlet Allocation) to analyze popular topics within the forum and further interprets the results. The project is divided into three parts: data collection, data analysis, and result interpretation.
 
-## 第一部分：數據收集 (`text_collection.ipynb`)
+## Part One: Data Collection (`text_collection.ipynb`)
 
-- **目標**：從PTT銀行論壇爬取數據，存取文章標題、文章、留言以及其他相關資料。本次專案共用4,000多筆資料。
-- **使用工具**：請參閱文件最後之`需求`。
-- **輸出**：兩個數據集：一個存放所有資料（100多篇文章，包含標題、作者、推文等資訊）、一個存放留言（3900多條留言）。
+- **Objective**: Extract data from the PTT Bank Forum, capturing article titles, posts, comments, and other related information. This project utilizes over 4,000 pieces of data.
+- **Tools Used**: Refer to the `Requirements` section at the end of the document.
+- **Output**: Two datasets: one containing all data (over 100 articles, including titles, authors, likes, etc.), and another containing comments (over 3,900 comments).
 
-## 第二部分：數據分析 (`lda_analysis.ipynb`)
+## Part Two: Data Analysis (`lda_analysis.ipynb`)
 
-- **目標**：應用清理技術和LDA分析於收集到的數據上，以識別PTT銀行論壇內的主導主題。
-- **使用工具**：Python及其NLP庫，如`ckiptagger`用於中文文本分詞和`gensim`進行LDA建模。
-- **輸出**：一組代表PTT銀行論壇主要討論主題的主題集，以及它們各自的詞分布和相關性分數。
+- **Objective**: Apply cleaning techniques and LDA analysis to the collected data to identify dominant themes within the PTT Bank Forum.
+- **Tools Used**: Python and its NLP libraries, such as `ckiptagger` for Chinese text segmentation and `gensim` for LDA modeling.
+- **Output**: A set of topics representing the main discussion themes within the PTT Bank Forum, along with their respective word distributions and relevancy scores.
 
-## 如何使用
+## How to Use
 
-1. **數據收集**：運行`text_collection.ipynb`筆記本收集和預處理來自PTT銀行的數據。
-2. **數據分析**：使用收集來的數據，進一步清理（斷詞、移除停用詞）後，執行`lda_analysis.ipynb`筆記本進行LDA分析，揭示潛在主題。
+1. **Data Collection**: Run the `text_collection.ipynb` notebook to collect and preprocess data from PTT Bank.
+2. **Data Analysis**: With the collected data, further clean it (segmentation, removing stop words) and then perform LDA analysis using the `lda_analysis.ipynb` notebook to reveal underlying topics.
 
-## 成果分析
+## Result Interpretation
 
-1. **LDA分析網頁**：主題模型視覺化網頁，可以觀察三個不同的主題之關鍵詞、分佈、相似性。
-    1. 關鍵詞包含「信用卡」、「利率」、「貸款」、「存款」，可能反映了用戶對於銀行信貸產品和儲蓄服務的討論和關注。
-    2. 「ATM」、「網路銀行」、「手續費」等詞彙可能與銀行服務的便捷性和成本相關。
-    3. 如「jpg」或「圖片」這類與文件格式有關的詞彙或網址，可能是指用戶分享的銀行產品宣傳資料或螢幕截圖。
-2. **數據集**：PTT銀行論壇（Bank Service）的100多篇文章、3900多條留言。
+1. **LDA Analysis Webpage**: A topic model visualization webpage, observing three different topics' keywords, distribution, and similarity.
+    1. Keywords like "credit card", "interest rate", "loan", "deposit" may reflect the discussion and attention of users on bank credit products and savings services.
+    2. Terms such as "ATM", "online banking", "fees" may relate to the convenience and cost of banking services.
+    3. Words related to file formats or URLs, like "jpg" or "picture", might refer to bank product promotional materials or screenshots shared by users.
+2. **Datasets**: Over 100 articles and 3,900 comments from the PTT Bank Forum (Bank Service).
 
-## 後續研究
+## Further Research
 
-1. **趨勢分析**：追蹤這些關鍵詞隨時間的變化，幫助識別用戶興趣和市場趨勢的轉變。
-2. **情感分析**：結合情感分析工具，評估討論時的情感傾向，例如，分析討論「費用」和「手續費」時用戶的正負面情緒，為銀行服務的改進提供參考。
-3. **用戶細分**：根據討論的主題和關鍵詞進行用戶細分，理解不同用戶群體關注的焦點。
+1. **Trend Analysis**: Track these keywords over time to help identify changes in user interests and market trends.
+2. **Sentiment Analysis**: Incorporate sentiment analysis tools to assess the emotional tone during discussions, e.g., analyzing the positive and negative sentiments when discussing "fees" and "charges", providing insights for improving banking services.
+3. **User Segmentation**: Segment users based on the topics and keywords discussed to understand the focus of different user groups.
 
-## 需求
+## Requirements
 
 - Python 3.6+
-- `pandas`, `jieba`,`requests`, `beautifulsoup4`, `ckiptagger`, `gensim`, `pyLDAvis`。
+- `pandas`, `jieba`, `requests`, `beautifulsoup4`, `ckiptagger`, `gensim`, `pyLDAvis`.
